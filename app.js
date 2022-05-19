@@ -1,31 +1,21 @@
 const app = Vue.createApp({
   data() {
     return{
+      url: 'http://twitch.tv/zerkaa',
       showBooks: true,
-      title: 'The Witcher',
-      author: 'Andrzej Sapkowski',
-      age: 70,
-      x: 0,
-      y: 0
+      books: [
+        {title: 'name of the wind', author: 'patrick rothfuss', img: 'assets/1.png', isFav: true},
+        {title: 'great expectations', author: 'charles dickens', img: 'assets/2.png', isFav: false},
+        {title: 'factotum', author: 'charles bukowski', img: 'assets/3.png', isFav: true}        
+      ]
     }
   },
   methods: {
       toggleShowBooks() {
         this.showBooks = !this.showBooks
-      },
-      handleEvent(e, data) {
-        console.log(e, e.type)
-        if (data) {
-          console.log(data)
-        }
-      },
-      handleMousemove(e) {
-        this.x = e.offsetX
-        this.y = e.offsetY
       }
-    }
-  })
-
+  }
+})
 app.mount('#app')
 
 //console.log(app)
